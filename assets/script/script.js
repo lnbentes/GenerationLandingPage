@@ -35,13 +35,12 @@ function validarMensagem(){
     contador = mensagem.value.length;
     textMensagem.innerHTML = "Numero de caracter " + contador + "/100";
 
-    if (assunto.value.length >= 100) {
-        textMensagem.style.color = 'red !important';
+    if (mensagem.value.length > 100) {
         mensagem.classList.add("is-invalid");
+        mensagemOk = false;
      } else {
-        textMensagem.style.color = "ligth";
         mensagem.classList.remove("is-invalid");
-        mensagemOk = true
+        mensagemOk = true;
      }
 }
 

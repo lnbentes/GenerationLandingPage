@@ -6,6 +6,17 @@
     background-color: var(--clr-dark-primary);
 }
 
+.tamanho{
+  min-height: 100vh;
+}
+
 .map{
   aspect-ratio: 2/1;
+  width: 100%;
+}
+
+@media (max-width: 560px) {
+  .map{
+    width: 88vw;
+  }
 }
