@@ -19,4 +19,8 @@
   .map{
     width: 88vw;
   }
+
+  #sobre{
+    height: 160vh;
+  }
 }
