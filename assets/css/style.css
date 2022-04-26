@@ -1,0 +1,11 @@
+:root {
+    --clr-dark-primary: #0059B8;
+  }
+
+.bg-fundo{
+    background-color: var(--clr-dark-primary);
+}
+
+.map{
+  aspect-ratio: 2/1;
+}

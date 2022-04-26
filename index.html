@@ -8,11 +8,13 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="./assets/css/style.css">
+
 </head>
 <body>  
 
     <!-- ! menu -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top fundo">
         <a class="navbar-brand" href="#">
             <img src="https://github.com/lnbentes.png" width="40" height="40" alt="" class="rounded-circle border border-light">
           </a>
@@ -60,7 +62,7 @@
     <!-- inicio da pagina -->
 
     <!-- Home -->
-    <div class="container-fluid bg-primary">
+    <div class="container-fluid  bg-fundo">
             <div class="row">
                 <div class="col-md-12">
                     <div class="container-fluid p-0 bg-base vh-100 d-flex align-items-center">
@@ -122,11 +124,11 @@
         <!-- /Sobre -->
 
         <!-- Skills -->
-        <div class="container-fluid bg-primary">
+        <div class="container-fluid bg-fundo">
             <div class="container vh-100 d-flex flex-column justify-content-center" id="skills">
                 <h2 class="text-center p-5 text-light fw-lighter display-3">Minhas Skills</h2>
-                <div class="progress">
-                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                <div class="progress barraProgreso">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
                   </div>
                 <div class="row d-flex justify-content-around">
                   <div class="col-md-5">
@@ -174,7 +176,7 @@
                       </div>
                     </div>
                     <div class="card">
-                        <video width="475" controls>
+                        <video controls>
                             <source src="./assets/video/primeiroBlog.mp4" type="video/mp4">
                             Your browser does not support HTML video.
                         </video>
@@ -189,7 +191,7 @@
         <!-- /trabalhos -->
 
         <!-- contato -->
-        <div class="container-fluid vh-100 d-flex flex-column justify-content-center bg-primary" id="contato" >
+        <div class="container-fluid vh-100 d-flex flex-column justify-content-center bg-fundo" id="contato" >
             <h2 class="text-accent p-5 display-3 fw-lighter text-center text-light">Entre em contato comigo!</h2>
             
             <div class="container flex-column">
@@ -198,24 +200,24 @@
                 <div class="col">
 
                 <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text" id="basic-addon1">Nome</span>
+                    <div class="input-group-prepend ">
+                      <span class="input-group-text" id="nome">Nome</span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control nomeValidar" onkeyup="validarNome()" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
                   </div>
                   
                   <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <input type="text" class="form-control emailValidar" onkeyup="validarEmail()" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
                     <div class="input-group-append">
-                      <span class="input-group-text" id="basic-addon2">@example.com</span>
+                      <span class="input-group-text" id="email">@example.com</span>
                     </div>
                   </div>
 
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                      <label class="input-group-text" for="inputGroupSelect01">Opções</label>
+                      <label class="input-group-text" for="inputGroupSelect01">Assunto</label>
                     </div>
-                    <select class="custom-select" id="inputGroupSelect01">
+                    <select class="custom-select" id="assunto">
                       <option selected>Choose...</option>
                       <option value="1">FeedBack</option>
                       <option value="2">Duvidas</option>
@@ -227,19 +229,20 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text">Sua Mensagem</span>
                     </div>
-                    <textarea class="form-control" aria-label="With textarea"></textarea>
+                    <textarea class="form-control mensagemValidar" aria-label="With textarea" onkeyup="validarMensagem()"></textarea>
                   </div>
 
+                  <div class="textMensagem text-light"></div>
+
                 <div class="p-3">
-                    <button type="button" class="btn btn-outline-light">Enviar</button>
+                    <button type="button" class="btn btn-outline-light" onclick="enviar()">Enviar</button>
                 </div>
             </div>
 
             <div class="col">
                 <div class="justify-content-center">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7528.4582808422165!2d-46.652454421874815!3d-23.565967204273765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1sen!2sbr!4v1650911268871!5m2!1sen!2sbr" width="450" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7528.4582808422165!2d-46.652454421874815!3d-23.565967204273765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1sen!2sbr!4v1650911268871!5m2!1sen!2sbr"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
                 </div>
-
             </div>
 
             </div>
@@ -266,6 +269,7 @@
 
 
 
+    <script src="./assets/script/script.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
